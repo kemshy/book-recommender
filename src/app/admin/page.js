@@ -63,13 +63,14 @@ function AdminDashboard() {
     fetchBooks();
   }, []);
 
-  async function fetchBooks() {
-    setLoading(true);
-    const { data, error } = await supabase.from('books').select('*').order('ranking', { ascending: true });
-    if (error) console.error('Error fetching books:', error);
-    else setBooks(data);
-    setLoading(false);
-  }
+async function fetchBooks() {
+  setLoading(true);
+  // ↓ .limit(1000) を追加しました
+  const { data, error } = await supabase.from('books').select('*').order('ranking', { ascending: true }).limit(1000);
+  if (error) console.error('Error fetching books:', error);
+  else setBooks(data);
+  setLoading(false);
+}
 
   async function handleDelete(id) {
     if (window.confirm('本当にこの本を削除しますか？')) {
