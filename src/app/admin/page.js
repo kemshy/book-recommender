@@ -145,7 +145,7 @@ function AdminDashboard() {
 export default function AdminPage() {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const correctPassword = 'aaaa'; // あなたが設定したパスワード
+  const correctPassword = 'bookbackduck_3b'; // あなたが設定したパスワード
 
   const handleLogin = (e) => {
     e.preventDefault();
