@@ -29,9 +29,14 @@ function BookDetailModal({ book, onClose }) {
             <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">あらすじ</h3>
             <p className="text-base leading-relaxed text-gray-700 whitespace-pre-wrap">{book.synopsis}</p>
             {book.purchase_link && (
-              <a href={book.purchase_link} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block w-full text-center px-6 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors">
-                購入ページへ
-              </a>
+              <a
+  href={book.purchase_link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 inline-block w-full text-center px-6 py-3 bg-amber-400 text-black font-bold rounded-lg shadow-md hover:bg-amber-500 transition-colors"
+>
+  Amazonで購入する
+</a>
             )}
           </div>
         </div>
@@ -85,10 +90,10 @@ export default function HomePage() {
             Book Recommender
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            次に読む本を見つけてくれる。
+            心ときめく一冊に、きっと出会える。
           </p>
           <button onClick={handleFindBooks} disabled={loading} className="mt-8 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 disabled:bg-gray-400">
-            {loading ? '検索中...' : '今週の三冊を見つける！'}
+            {loading ? '検索中...' : '次に読む本を見つける'}
           </button>
           
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[320px]">
